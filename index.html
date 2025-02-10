@@ -1,9 +1,65 @@
-$(document).ready(function(){
-  $('.slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-  });
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Global Websites - Professional Website Development in Kempton Park and Vereeniging. We offer Website Design, Web Development, Application Development, SEO, and Data Analysis.">
+    <meta name="keywords" content="Website Development, Web Design, SEO, Data Analysis, Application Development, Kempton Park, Vereeniging">
+    <meta name="author" content="Global Websites">
+    <title>Global Websites | Website Development Experts</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header>
+        <h1>Global Websites</h1>
+        <p>Website Development | SEO | Data Analysis</p>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service" data-aos="fade-up">
+            <img src="web-design.jpg" alt="Website Design">
+            <h3>Website Design</h3>
+            <p>We create stunning and modern website designs.</p>
+        </div>
+        <div class="service" data-aos="fade-up">
+            <img src="images/a.jpg" alt="Web Development">
+            <h3>Web Development</h3>
+            <p>Developing high-performance websites tailored to your needs.</p>
+        </div>
+        <div class="service" data-aos="fade-up">
+            <img src="images/b.jpg" alt="Application Development">
+            <h3>Application Development</h3>
+            <p>Building custom applications for businesses.</p>
+        </div>
+        <div class="service" data-aos="fade-up">
+            <img src="images/d.jpg" alt="SEO">
+            <h3>SEO</h3>
+            <p>Boost your website's ranking on search engines.</p>
+        </div>
+        <div class="service" data-aos="fade-up">
+            <img src="images/c.jpg" alt="Data Analysis">
+            <h3>Data Analysis</h3>
+            <p>Transforming data into meaningful insights.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We are based in Kempton Park and Vereeniging.</p>
+        <a href="https://wa.me/yourwhatsapplink" target="_blank">Chat with us on WhatsApp</a>
+        <a href="https://facebook.com/yourfacebookpage" target="_blank">Visit our Facebook Page</a>
+    </section>
+    
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
