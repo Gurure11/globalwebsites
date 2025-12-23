@@ -3,6 +3,7 @@
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4531257337326657"
      crossorigin="anonymous"></script>
+
     <link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,160 +11,235 @@
     <meta name="keywords" content="Website Development, Web Design, SEO, Data Analysis, Application Development, Kempton Park, Vereeniging">
     <meta name="author" content="Global Websites">
     <title>Global Websites | Website Development Experts</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <style>
+        :root {
+            --primary: #0d6efd;
+            --dark: #111;
+            --light: #fff;
+            --glass: rgba(255,255,255,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: var(--light);
         }
+
+        /* HEADER */
         header {
-            background: #222;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            background: rgba(0,0,0,0.6);
         }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
             font-weight: bold;
+            color: var(--light);
         }
-        #slider {
-            max-width: 100%;
-            overflow: hidden;
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
         }
-        .slider img {
-            width: 100%;
-            height: auto;
-        }
-        #about, #services, #contact {
-            padding: 40px;
-            text-align: center;
-            background: #fff;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .service img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .service {
-            padding: 20px;
-            background: #fafafa;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        #contact a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background: #007bff;
-            color: #fff;
+
+        nav a {
+            color: var(--light);
             text-decoration: none;
-            border-radius: 5px;
+            position: relative;
         }
-        #contact a:hover {
-            background: #0056b3;
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            animation: floatText 4s ease-in-out infinite;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(13,110,253,0.4);
+        }
+
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 4rem 1.5rem;
+        }
+
+        .card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(0,0,0,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ANIMATIONS */
+        @keyframes floatText {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background: rgba(0,0,0,0.9);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Global IT & Websites - 061 256 4814</h1>
-        <p>Website Development | SEO | Data Analysis</p>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">Global Websites</div>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
         </nav>
-    </header>
-    
-    <section id="slider">
-        <div class="slider">
-            <img src="images/a.jpg" alt="Slide 1">
-            <img src="images/b.jpg" alt="Slide 2">
-            <img src="images/d.jpg" alt="Slide 3">
-        </div>
-    </section>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>With over 10 years of experience, Global Websites is your trusted partner in website development. We specialize in designing, developing, and optimizing websites to help businesses succeed online.</p>
-        <p>SEO (Search Engine Optimization)
-Boost your website’s visibility on search engines with expert SEO services. We optimize content, keywords, and technical aspects to improve rankings and attract more visitors.
+    </div>
+</header>
 
-Online Store Development
-Get a fully functional online store with secure payment gateways, user-friendly navigation, and a seamless shopping experience to grow your business online.
+<section class="hero">
+    <h1 data-aos="fade-up">Professional Website Development</h1>
+    <p data-aos="fade-up" data-aos-delay="200">
+        We build modern, fast, SEO-optimized websites and applications that grow your business.
+    </p>
+    <a href="#" class="btn" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+</section>
 
-E-commerce Solutions
-We provide complete e-commerce solutions, from product listings to secure checkout systems, ensuring smooth online transactions for your customers.
+<section class="services">
+    <div class="card" data-aos="fade-up">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Modern, scalable and secure websites.</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>App Development</h3>
+        <p>High-performance mobile and web apps.</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-chart-line"></i>
+        <h3>SEO & Data</h3>
+        <p>Rank higher and understand your users.</p>
+    </div>
+</section>
 
-Data Analysis
-Make data-driven decisions with our expert data analysis services. We help you understand customer behavior, market trends, and performance insights to optimize your business.
+<footer>
+    © 2025 Global Websites. All Rights Reserved.
+</footer>
 
-Dynamic Websites
-Need a website that updates content regularly? Our dynamic websites are interactive, database-driven, and perfect for businesses that require frequent updates.
+<script>
+    AOS.init({ once: true, duration: 900 });
 
-Static Websites
-Simple, fast, and secure—our static websites are ideal for businesses that need a professional online presence without frequent updates.
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.querySelector('nav').classList.toggle('show');
+    });
+</script>
 
-Let me know if you’d like any changes! 😊</p>
-    </section>
-    
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service" data-aos="fade-up">
-                <img src="images/d.jpg" alt="Website Design">
-                <h3>Website Design</h3>
-                <p>We create stunning and modern website designs.</p>
-            </div>
-            <div class="service" data-aos="fade-up">
-                <img src="images/e.jpg" alt="Web Development">
-                <h3>Web Development</h3>
-                <p>Developing high-performance websites tailored to your needs.</p>
-            </div>
-            <div class="service" data-aos="fade-up">
-                <img src="images/f.jpg" alt="Application Development">
-                <h3>Application Development</h3>
-                <p>Building custom applications for businesses.</p>
-            </div>
-        </div>
-    </section> <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>67dc52e403801d8438964277,67dc526c57c4e4c598d96f6e</script>
-    
-    <section id="contact">
-        <h2>Contact Us</h2><br>
-        Cell +27 061 256 4814  Address: 44 Kempton Road, Kempton Park, Johannesburg, South Africa<br>
-        <p>Global IT & Websites we are based in Kempton Park and Vereeniging.</p>
-        <a href="https://api.whatsapp.com/send?phone=%2B27612564814"" target="_blank">Chat with us on WhatsApp</a>
-        <a href="https://facebook.com/" target="_blank">Visit our Facebook Page</a>
-    </section>
-    
-    <script>
-        AOS.init();
-        $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: true,
-                dots: true,
-                arrows: false
-            });
-        });
-    </script>
 </body>
 </html>
