@@ -1,15 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4531257337326657"
      crossorigin="anonymous"></script>
 
     <link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Global Websites - Professional Website Development in Kempton Park and Vereeniging. We offer Website Design, Web Development, Application Development, SEO, and Data Analysis.">
-    <meta name="keywords" content="Website Development, Web Design, SEO, Data Analysis, Application Development, Kempton Park, Vereeniging">
+    <meta name="description" content="Global Websites - Professional Website Development in Kempton Park and Vereeniging. Web Design, App Development, SEO and Data Solutions.">
+    <meta name="keywords" content="Website Development, Web Design, SEO, App Development, Kempton Park, Vereeniging">
     <meta name="author" content="Global Websites">
+
     <title>Global Websites | Website Development Experts</title>
 
     <!-- Libraries -->
@@ -21,8 +24,8 @@
     <style>
         :root {
             --primary: #0d6efd;
-            --dark: #111;
-            --light: #fff;
+            --dark: #0b0b0b;
+            --light: #ffffff;
             --glass: rgba(255,255,255,0.08);
         }
 
@@ -38,13 +41,12 @@
             color: var(--light);
         }
 
-        /* HEADER */
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(12px);
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.7);
         }
 
         .nav-container {
@@ -57,7 +59,6 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--light);
         }
 
         nav {
@@ -68,28 +69,12 @@
         nav a {
             color: var(--light);
             text-decoration: none;
-            position: relative;
+            font-weight: 500;
         }
 
-        nav a::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: -5px;
-            left: 0;
-            transition: 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* MOBILE MENU */
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             cursor: pointer;
         }
 
@@ -97,45 +82,48 @@
         .hero {
             padding: 5rem 1.5rem;
             text-align: center;
+            max-width: 900px;
+            margin: auto;
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
             animation: floatText 4s ease-in-out infinite;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: 1rem auto 2rem;
+            margin: 1.2rem auto 2.2rem;
             opacity: 0.9;
         }
 
         .btn {
-            padding: 0.9rem 2rem;
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
             background: var(--primary);
             color: #fff;
             border-radius: 30px;
             text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(13,110,253,0.4);
+            opacity: 0.9;
         }
 
         /* SERVICES */
         .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
             padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .card {
             background: var(--glass);
             border-radius: 20px;
-            padding: 2rem;
+            overflow: hidden;
             backdrop-filter: blur(10px);
             transition: transform 0.3s;
         }
@@ -144,36 +132,57 @@
             transform: translateY(-8px);
         }
 
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
         .card i {
             font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
-        /* FOOTER */
-        footer {
+        /* CONTACT */
+        .contact {
+            padding: 4rem 1.5rem;
             text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contact a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
             padding: 2rem 1rem;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.8);
+            text-align: center;
             font-size: 0.9rem;
         }
 
-        /* ANIMATIONS */
         @keyframes floatText {
             0%,100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             nav {
                 display: none;
                 flex-direction: column;
-                background: rgba(0,0,0,0.9);
+                background: rgba(0,0,0,0.95);
                 position: absolute;
-                top: 100%;
-                left: 0;
                 width: 100%;
+                left: 0;
+                top: 100%;
                 padding: 1rem;
             }
 
@@ -195,38 +204,64 @@
         <div class="logo">Global Websites</div>
         <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </nav>
     </div>
 </header>
 
-<section class="hero">
-    <h1 data-aos="fade-up">Professional Website Development</h1>
-    <p data-aos="fade-up" data-aos-delay="200">
-        We build modern, fast, SEO-optimized websites and applications that grow your business.
+<section class="hero" id="home">
+    <h1 data-aos="fade-up">Professional Website & App Development</h1>
+    <p data-aos="fade-up" data-aos-delay="150">
+        We design, develop and optimize modern digital solutions that help businesses grow online.
     </p>
-    <a href="#" class="btn" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+    <a href="#services" class="btn" data-aos="zoom-in" data-aos-delay="300">View Services</a>
 </section>
 
-<section class="services">
+<section class="services" id="services">
+
     <div class="card" data-aos="fade-up">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Modern, scalable and secure websites.</p>
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Web Development">
+        <div class="card-content">
+            <i class="fas fa-code"></i>
+            <h3>Website Development</h3>
+            <p>
+                We build fast, responsive and secure websites tailored to your business needs, optimized for SEO and performance.
+            </p>
+        </div>
     </div>
+
     <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>App Development</h3>
-        <p>High-performance mobile and web apps.</p>
+        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" alt="App Development">
+        <div class="card-content">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Application Development</h3>
+            <p>
+                Custom mobile and web applications built for scalability, usability and real-world performance.
+            </p>
+        </div>
     </div>
+
     <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-chart-line"></i>
-        <h3>SEO & Data</h3>
-        <p>Rank higher and understand your users.</p>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="SEO and Data">
+        <div class="card-content">
+            <i class="fas fa-chart-line"></i>
+            <h3>SEO & Data Analytics</h3>
+            <p>
+                Improve your online visibility, rank higher on Google, and make data-driven business decisions.
+            </p>
+        </div>
     </div>
+
+</section>
+
+<section class="contact" id="contact">
+    <h2 data-aos="fade-up">Get In Touch</h2>
+    <p data-aos="fade-up" data-aos-delay="150">
+        📍 Kempton Park & Vereeniging <br>
+        📧 <a href="mailto:info@globalwebsites.co.za">info@globalwebsites.co.za</a>
+    </p>
 </section>
 
 <footer>
@@ -243,3 +278,4 @@
 
 </body>
 </html>
+
