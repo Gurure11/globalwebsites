@@ -1,172 +1,224 @@
+
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBX90598EF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Global Websites – Website Development Experts in Vereeniging, Bophelong and Bloemfontein">
+    <title>Contact Us | Global Websites</title>
 
-  gtag('config', 'G-TBX90598EF');
-</script>
-	<title>Blue Tech Websites & Software Application Development</title>
-	<style type="text/css">
-		#main-body{
-			align-items: center;
-			text-align: center;
-			color: white;
-			background-image: url(images/a.jpg);
-			background-size: cover;
-		}
-		
-		#send{
-			color: white;
-			background-color: blue;
-			border-radius: 2px;
-			border: none;
-			padding: 5px;
-		}
-		#send:hover{
-			color: blue;
-			background-color: green;
-			cursor: pointer;
-			opacity: 0.5;
-			transition: 0.15s;
-		}
-		#home{
-			margin-right: 30px;
-		}
-		#details{margin-right: 30px;
-		}
-		#products{
-			margin-right: 30px;
-		}
-		#home:hover{
-			color: black;
-			background-color: green;
-			opacity: 0.5;
-			cursor: pointer;
-			transition: 0.15s;
+    <!-- Icons & Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-		}
-		#details:hover{
-			color: black;
-			background-color: green;
-			opacity: 0.5;
-			cursor: pointer;
-			transition: 0.15s;
-		}
-		#products:hover{
-			color: red;
-			background-color: green;
-			opacity: 0.5;
-			cursor: pointer;
-			transition: 0.15s;
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
 
-		}
-		#face:hover{
-			color: red;
-			cursor: pointer;
-			opacity: 0.5;
-			background-color: yellow;
-		}
-		#insta:hover{
-			color: red;
-			cursor: pointer;
-			opacity: 0.5;
-			background-color: yellow;
-		}
-		#map:hover{  
-			color: red;
-			cursor: pointer;
-			opacity: 0.5;
-			background-color: yellow;
-		}
+        header {
+            background: rgba(0,0,0,0.7);
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-		p{color: blue;
-		}
-		#home{
-			color: white;
-		}
-		#details{
-			color: white;
-		}
-		h2{
-			color: grey;
-		}
-	</style>
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem 1.2rem;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* CONTACT GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            border: none;
+        }
+
+        /* CONTACT INFO */
+        .info p {
+            margin: 0.8rem 0;
+            font-size: 1rem;
+        }
+
+        .info i {
+            color: #0d6efd;
+            margin-right: 0.6rem;
+        }
+
+        /* SOCIALS */
+        .socials a {
+            color: #fff;
+            font-size: 1.6rem;
+            margin-right: 1rem;
+            text-decoration: none;
+        }
+
+        /* FORM */
+        form input, form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        form button {
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 30px;
+            border: none;
+            background: #0d6efd;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            text-align: center;
+            background: rgba(0,0,0,0.8);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: #fff;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            z-index: 1000;
+        }
+    </style>
 </head>
-<body id="main-body">
-	<h2>Blue Tech Websites & Software Application Development</h2><br>
-	<hr>
-	<br>
-	<a id="home" href="index.html">Home Page</a>
-	<a id="details" href="details.html">About Us</a>
-	
-	<br>
-	<br>
-		<form action="https://formsubmit.co/bothwell.gurure11@gmail.com" method="POST">
-			<div>
-			
-			<label>Name</label>
-			<input type="text" name="firstName" placeholder="Enter first name"><br>
-			<br>
-			<label>Surname</label>
-			<input type="text" name="lastName" placeholder="Enter Surname"><br>
-			<br>
-			<label>Contact Number</label>
-			<input type="Phone" placeholder="078-429-2235"><br><br>
-			<label>Email</label>	
-			<input type="email" name="Email" placeholder="Email Address"><br>
-				<br>
-			<label>Date Website Requested</label>
-			<input type="Date" name="Date"><br>
-			<br>
-			<label>Gender</label>
-			<select>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-				<option value="other">Other</option>
-			</select>
-			<hr>
-			<label>Message</label>
-			<textarea type="text area" name="Message"></textarea><br>
-			<br>
-			<button id="send" input="submit">Submit</button><br>
-			<br>
-		</div>
-	</form>
-	
-<strong>Contacts</strong> <br>
-<br>
-	
 
-<br>
-<br>
-Director: 	Operations: Bothwell <br>     
-Address:    8 Kruger Avenue<br>
-            Kempton Park<br>
-			Gauteng<br>
+<body>
 
-Cell No:	+27-61-256-4814<br>
+<header>Global Websites – Contact Us</header>
 
-Email: 		bothwell.gurure11@gmail.com<br>
-<br>
-<br>
+<div class="container">
+    <h2 data-aos="fade-up">Get In Touch With Us</h2>
 
+    <div class="contact-grid">
 
-<a id="map" href="https://maps.app.goo.gl/EbcUeQtaSrnAFQiEA">Map Click Me</a><br>
-<p>Contact us directly to learn more about our products, pricing information and any enquiries.</p> <br>
-<br>
-<br>
+        <!-- CONTACT DETAILS -->
+        <div class="card info" data-aos="fade-up">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-phone"></i> <a href="https://wa.me/27612564814" style="color:#fff;text-decoration:none;">061 256 4814</a></p>
+            <p><i class="fas fa-envelope"></i> info@globalwebsites.co.za</p>
+
+            <h3>Follow Us</h3>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Send Us a Message</h3>
+            <form onsubmit="sendToWhatsApp(); return false;">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email">
+                <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send via WhatsApp</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- MAPS -->
+    <div class="contact-grid" style="margin-top:2rem;">
+        <div class="card" data-aos="fade-up">
+            <h3>Vereeniging Branch</h3>
+            <p>15 Kruger Avenue, Vereeniging</p>
+            <iframe 
+                src="https://www.google.com/maps?q=15+Kruger+Avenue+Vereeniging&output=embed">
+            </iframe>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Bophelong / Bloemfontein Branch</h3>
+            <p>Bophelong, Bloemfontein</p>
+            <iframe 
+                src="https://www.google.com/maps?q=Bophelong+Bloemfontein&output=embed">
+            </iframe>
+        </div>
+    </div>
+</div>
 
 <footer>
-	<a rel="nofollow" href="https://www.gumtree.co.za/u-seller-listings/priscillasalon-massage/v1u131621363p1" target="_blank">        <img src="https://securet9.classistatic.com/assets/images/en_ZA/sellerBadge_small-55444f678f.jpg" alt="Find all my products at Gumtree"/></a><br>
-	<br>
-	&copy Blue Tech Websites & Software Application Development 2023.
-	<br>
-	<br>
+    © 2025 Global Websites. All Rights Reserved.
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/27612564814" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    AOS.init({ once: true, duration: 900 });
+
+    function sendToWhatsApp() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        let whatsappURL = `https://wa.me/27612564814?text=
+        Name: ${name}%0A
+        Email: ${email}%0A
+        Message: ${message}`;
+
+        window.open(whatsappURL, "_blank");
+    }
+</script>
+
+</body>
+</html>
 
